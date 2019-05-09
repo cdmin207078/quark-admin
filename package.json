@@ -10,6 +10,7 @@
   "dependencies": {
     "bootstrap-vue": "^2.0.0-rc.19",
     "core-js": "^2.6.5",
+    "iview": "^3.4.1",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3"
   },
@@ -21,8 +22,8 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
-    "less": "^3.0.4",
-    "less-loader": "^4.1.0",
+    "less": "^2.7.3",
+    "less-loader": "^5.0.0",
     "vue-template-compiler": "^2.5.21"
   }
 }

@@ -4,12 +4,18 @@ import router from "./router";
 
 Vue.config.productionTip = false;
 
-import BootstrapVue from "bootstrap-vue";
+// import BootstrapVue from "bootstrap-vue";
 
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap-vue/dist/bootstrap-vue.css";
+// import "bootstrap/dist/css/bootstrap.css";
+// import "bootstrap-vue/dist/bootstrap-vue.css";
 
-Vue.use(BootstrapVue);
+// Vue.use(BootstrapVue);
+
+import iView from "iview";
+// import "iview/dist/styles/iview.css"; // 自定义主题
+import "./theme/index.less";
+
+Vue.use(iView);
 
 new Vue({
   router,
