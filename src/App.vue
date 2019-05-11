@@ -1,22 +1,47 @@
 <template>
   <div id="app" class="layout">
     <Sider :style="{position: 'fixed', height: '100vh', left: 0, overflow: 'auto'}">
-      <div class="layout-logo">Logo</div>
+      <div class="layout-logo">logo</div>
       <Menu theme="dark" active-name="1" :style="{width: '200px'}">
-        <MenuGroup title="内容管理">
-          <MenuItem name="1">
-            <Icon type="md-document"/>文章管理
-          </MenuItem>
+        <MenuItem name="1">
+          <Icon type="md-game-controller-b" />仪表盘
+        </MenuItem>
+        <MenuGroup title="文章">
           <MenuItem name="2">
-            <Icon type="md-chatbubbles"/>评论管理
+            <Icon type="md-document"/>所有文章
           </MenuItem>
-        </MenuGroup>
-        <MenuGroup title="统计分析">
           <MenuItem name="3">
-            <Icon type="md-heart"/>用户留存
+            <Icon type="md-create" />写文章
           </MenuItem>
           <MenuItem name="4">
-            <Icon type="md-leaf"/>流失用户
+            <Icon type="md-albums" />文章分类
+          </MenuItem>
+          <MenuItem name="5">
+            <Icon type="md-pricetags" />标签
+          </MenuItem>
+        </MenuGroup>
+
+        <MenuGroup title="用户">
+          <MenuItem name="6">
+            <Icon type="md-contacts" />所有用户
+          </MenuItem>
+          <MenuItem name="7">
+            <Icon type="md-person-add" />添加用户
+          </MenuItem>
+          <MenuItem name="8">
+            <Icon type="ios-contact" />我的个人资料
+          </MenuItem>
+        </MenuGroup>
+
+        <MenuGroup title="设置">
+          <MenuItem name="9">
+            <Icon type="md-options" />常规
+          </MenuItem>
+          <MenuItem name="10">
+            <Icon type="md-images" />媒体
+          </MenuItem>
+          <MenuItem name="11">
+            <Icon type="md-link" />固定链接
           </MenuItem>
         </MenuGroup>
       </Menu>
@@ -31,22 +56,12 @@
         </Breadcrumb>
         <Card dis-hover>
           <Form ref="formInline" :model="formInline" :rules="ruleInline" inline>
-            <FormItem prop="user">
-              <Input type="text" v-model="formInline.user" placeholder="Username">
-                <Icon type="ios-person-outline" slot="prepend"></Icon>
-              </Input>
-            </FormItem>
-            <FormItem prop="password">
-              <Input type="password" v-model="formInline.password" placeholder="Password">
-                <Icon type="ios-lock-outline" slot="prepend"></Icon>
-              </Input>
-            </FormItem>
             <FormItem>
-              <Button type="primary" @click="handleSubmit('formInline')">Signin</Button>
+              <Input search enter-button placeholder="文章标题 / 内容" style="width:300px;"/>
             </FormItem>
           </Form>
-
           <Table border :columns="columns7" :data="data6"></Table>
+          <Page :total="100" show-sizer show-total :style="{marginTop: '10px'}"/>
         </Card>
       </Content>
     </Layout>
