@@ -49,7 +49,9 @@
     <Layout :style="{marginLeft: '200px'}">
       <Header :style="{background: '#fff', boxShadow: '0 2px 3px 2px rgba(0,0,0,.1)'}"></Header>
       <Content :style="{padding: '0 16px 16px'}">
-        <router-view/>
+        <transition >
+          <router-view/>
+        </transition>
       </Content>
     </Layout>
   </div>
@@ -72,5 +74,13 @@ export default {};
   text-align: center;
   color: #b3b8c1;
   line-height: 50px;
+}
+.component-fade-enter-active,
+.component-fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.component-fade-enter, .component-fade-leave-to
+/* .component-fade-leave-active for below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>
